@@ -4,7 +4,7 @@ package numtrie
 
 import (
 	"fmt"
-    "testing"
+	"testing"
 )
 
 
