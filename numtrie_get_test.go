@@ -11,10 +11,10 @@ import (
 
 func TestGetPathNothing(t *testing.T) {
 
-    bt := New()
-    if nil == bt {
-        t.Errorf("Received new when calling New(), but should not have.")
-    }
+	bt := New()
+	if nil == bt {
+		t.Errorf("Received new when calling New(), but should not have.")
+	}
 
 
 	r := bt.GetPath( []byte("a"))
@@ -30,10 +30,10 @@ func TestGetPathNothing(t *testing.T) {
 
 func TestGetPathDepthOne(t *testing.T) {
 
-    bt := New()
-    if nil == bt {
-        t.Errorf("Received new when calling New(), but should not have.")
-    }
+	bt := New()
+	if nil == bt {
+		t.Errorf("Received new when calling New(), but should not have.")
+	}
 
 
 	r := bt.GetPath( []byte("a"))
@@ -73,10 +73,10 @@ func TestGetPathDepthOne(t *testing.T) {
 
 func TestGetPathDepthTwo(t *testing.T) {
 
-    bt := New()
-    if nil == bt {
-        t.Errorf("Received new when calling New(), but should not have.")
-    }
+	bt := New()
+	if nil == bt {
+		t.Errorf("Received new when calling New(), but should not have.")
+	}
 
 
 	r := bt.GetPath( []byte("ab"))
