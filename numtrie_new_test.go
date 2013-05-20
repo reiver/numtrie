@@ -10,8 +10,8 @@ import (
 
 func TestNew(t *testing.T) {
 
-    bt := New()
-    if nil == bt {
+    nt := New()
+    if nil == nt {
         t.Errorf("Received new when calling New(), but should not have.")
     }
 }
