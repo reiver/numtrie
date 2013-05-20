@@ -11,18 +11,18 @@ import (
 
 func TestGetPathNothing(t *testing.T) {
 
-	bt := New()
-	if nil == bt {
+	nt := New()
+	if nil == nt {
 		t.Errorf("Received new when calling New(), but should not have.")
 	}
 
 
-	r := bt.GetPath( []byte("a"))
+	r := nt.GetPath( []byte("a"))
 	if nil != r {
         t.Errorf(  fmt.Sprintf("Received result, but should not have. Received: %v", r)  )
 	}
 
-	r = bt.GetPath( []byte("ab"))
+	r = nt.GetPath( []byte("ab"))
 	if nil != r {
         t.Errorf(  fmt.Sprintf("Received result, but should not have. Received: %v", r)  )
 	}
@@ -30,42 +30,42 @@ func TestGetPathNothing(t *testing.T) {
 
 func TestGetPathDepthOne(t *testing.T) {
 
-	bt := New()
-	if nil == bt {
+	nt := New()
+	if nil == nt {
 		t.Errorf("Received new when calling New(), but should not have.")
 	}
 
 
-	r := bt.GetPath( []byte("a"))
+	r := nt.GetPath( []byte("a"))
 	if nil != r {
         t.Errorf(  fmt.Sprintf("Received result, but should not have. Received: %v", r)  )
 	}
 
-	bt.SetPath( []byte("a"), 7 )
+	nt.SetPath( []byte("a"), 7 )
 
-	r = bt.GetPath( []byte("a"))
+	r = nt.GetPath( []byte("a"))
 	if nil == r {
         t.Errorf("Did not received result, but should not have.")
 	}
 
-	r = bt.GetPath( []byte("b"))
+	r = nt.GetPath( []byte("b"))
 	if nil != r {
         t.Errorf(  fmt.Sprintf("Received result, but should not have. Received: %v", r)  )
 	}
 
-	bt.SetPath( []byte("b"), 22 )
+	nt.SetPath( []byte("b"), 22 )
 
-	r = bt.GetPath( []byte("b"))
+	r = nt.GetPath( []byte("b"))
 	if nil == r {
         t.Errorf("Did not received result, but should not have.")
 	}
 
-	r = bt.GetPath( []byte("a"))
+	r = nt.GetPath( []byte("a"))
 	if nil == r {
         t.Errorf("Did not received result, but should not have.")
 	}
 
-	r = bt.GetPath( []byte("c"))
+	r = nt.GetPath( []byte("c"))
 	if nil != r {
         t.Errorf(  fmt.Sprintf("Received result, but should not have. Received: %v", r)  )
 	}
@@ -73,35 +73,35 @@ func TestGetPathDepthOne(t *testing.T) {
 
 func TestGetPathDepthTwo(t *testing.T) {
 
-	bt := New()
-	if nil == bt {
+	nt := New()
+	if nil == nt {
 		t.Errorf("Received new when calling New(), but should not have.")
 	}
 
 
-	r := bt.GetPath( []byte("ab"))
+	r := nt.GetPath( []byte("ab"))
 	if nil != r {
         t.Errorf(  fmt.Sprintf("Received result, but should not have. Received: %v", r)  )
 	}
 
-	bt.SetPath( []byte("ab"), 7 )
+	nt.SetPath( []byte("ab"), 7 )
 
-	r = bt.GetPath( []byte("a"))
+	r = nt.GetPath( []byte("a"))
 	if nil == r {
         t.Errorf("Did not received result, but should not have.")
 	}
 
-	r = bt.GetPath( []byte("ab"))
+	r = nt.GetPath( []byte("ab"))
 	if nil == r {
         t.Errorf("Did not received result, but should not have.")
 	}
 
-	r = bt.GetPath( []byte("b"))
+	r = nt.GetPath( []byte("b"))
 	if nil != r {
         t.Errorf(  fmt.Sprintf("Received result, but should not have. Received: %v", r)  )
 	}
 
-	r = bt.GetPath( []byte("cd"))
+	r = nt.GetPath( []byte("cd"))
 	if nil != r {
         t.Errorf(  fmt.Sprintf("Received result, but should not have. Received: %v", r)  )
 	}
